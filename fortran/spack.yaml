@@ -8,6 +8,9 @@ spack:
   - fpm
   - mpi
   - netcdf-fortran
+  - parallel-fortran-env
   view: true
   concretizer:
     unify: true
+  repos:
+  - ./.spack
