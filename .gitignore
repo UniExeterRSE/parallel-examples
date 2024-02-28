@@ -1,4 +1,8 @@
+# Directories
+build
+.spack-env
+
+# Extensions
 *.nc
 *.lock
-*.spack-env
-*build
+*.mod

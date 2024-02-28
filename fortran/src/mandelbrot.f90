@@ -32,7 +32,7 @@ contains
         x_c = (/(i, i=1,grid_size, 1)/) * (2 * range_l / real(grid_size)) - range_l + centre_l(1)
         y_c = (/(i, i=1,grid_size, 1)/) * (2 * range_l / real(grid_size)) - range_l + centre_l(2)
 
-        !$acc parallel loop
+        !$omp parallel do
         do i = 1, size(x_c)
             do j = 1, size(y_c)
                 if (converges(cmplx(x_c(i), y_c(j)), n_iters)) then
@@ -42,7 +42,7 @@ contains
                 end if
             end do
         end do
-        !$acc end parallel loop
+        !$omp end parallel do
 
 
     end function mandelbrot_set
