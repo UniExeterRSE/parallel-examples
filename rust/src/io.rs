@@ -5,8 +5,6 @@ use std::path::Path;
 pub fn write(path: &Path, data: Array2::<f32>) {
     let mut file = netcdf::create(path).expect("O");
 
-    let shape = data.shape()[0];
-
     let dim1_name = "x";
     let _ = file.add_dimension(dim1_name, data.shape()[0]);
     let dim2_name = "y";
