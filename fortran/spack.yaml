@@ -7,6 +7,7 @@ spack:
   specs:
   - fpm
   - mpi
+  - netcdf-c@4.9.0
   - netcdf-fortran
   - parallel-fortran-env
   view: true

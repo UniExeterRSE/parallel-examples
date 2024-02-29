@@ -10,8 +10,8 @@ auto-executables = true
 auto-tests = true
 auto-examples = true
 module-naming = false
-external-modules = ["netcdf", "mpi"]
-link = ["netcdf", "netcdff", "mpi", "mpi_mpifh"]
+external-modules = ["netcdf"]
+link = ["netcdf", "netcdff"]
 
 [library]
 include-dir = ["./.spack-env/view/include", "./.spack-env/view/lib"]

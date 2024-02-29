@@ -17,5 +17,10 @@ class ParallelFortranEnv(BundlePackage):
     depends_on("netcdf-fortran")
 
     def setup_run_environment(self, env):
-        env.set("FPM_FFLAGS", f"-L{self.spec['mpi'].prefix}/lib " +
-                              f"-L{self.spec['netcdf-fortran'].prefix}/lib")
+        if sys.platform == 'darwin':
+            env.set("FPM_FFLAGS", f"-L{self.spec['mpi'].prefix}/lib " +
+                                  f"-L{self.spec['netcdf-fortran'].prefix}/lib " +
+                                  f"-ld_classic")
+        else:
+            env.set("FPM_FFLAGS", f"-L{self.spec['mpi'].prefix}/lib " +
+                                  f"-L{self.spec['netcdf-fortran'].prefix}/lib")
